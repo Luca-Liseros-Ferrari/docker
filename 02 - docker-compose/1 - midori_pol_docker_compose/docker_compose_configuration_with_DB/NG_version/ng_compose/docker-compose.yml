@@ -1,0 +1,37 @@
+version: '3.8'
+
+networks:
+  mynetwork:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.22.0.0/19"
+          gateway: "172.22.0.3"
+
+services:
+  web:
+    image: tomcat:9-jdk17-openjdk
+    container_name: webdue
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./tomcat/webapps/MIDORIBEATS.war:/usr/local/tomcat/webapps/ROOT.war
+    environment:
+      - sk_key=${sk_key}  # sk stripe
+    networks:
+      - mynetwork
+
+  db:
+    image: mysql:latest
+    container_name: dbdue
+    environment:
+      MYSQL_ROOT_PASSWORD: edam15!k2Mp_
+      MYSQL_DATABASE: midoripoldblastdue
+      MYSQL_PASSWORD: edam15!k2Mp_
+    ports:
+      - "3308:3306"
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
+    networks:
+      - mynetwork

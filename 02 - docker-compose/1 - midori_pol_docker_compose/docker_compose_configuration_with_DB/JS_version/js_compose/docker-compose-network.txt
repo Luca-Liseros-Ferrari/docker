@@ -1,0 +1,15 @@
+docker-compose logs jsbeats-web-1
+docker exec -it 118ae658b28d bash
+
+run separati dei container sql  e tomcat
+docker run -d --name db --network mynetwork -e MYSQL_ROOT_PASSWORD=edam15!k2Mp_ -e MYSQL_DATABASE=newdb mysql:8.0
+docker run -d --name web --network mynetwork -p 8080:8080 tomcat:9-jdk17-openjdk
+
+
+vedo il network
+docker network inspect mynetwork
+
+
+connetto i container al network
+docker network connect mynetwork web
+docker network connect mynetwork db

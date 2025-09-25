@@ -1,0 +1,32 @@
+body {
+  background: violet;
+}
+
+.productInCart {
+  display: grid;
+  padding: 10px;
+  margin: 100px auto 0 auto;
+  border: solid 2px green;
+  width: 90%;
+  justify-items: center;
+}
+
+.productInCart li {
+  display: grid;
+  padding: 10px;
+  margin: 100px auto 0 auto;
+  border: solid 2px green;
+  width: 90%;
+  justify-items: center;
+}
+
+.goToStripe {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.back[_ngcontent-ng-c2482956064] {
+  position: fixed;
+  top: 45px;
+  left: 60px;
+}
