@@ -1,0 +1,38 @@
+per il database assicurarsi che sia localhost nel persistence xml:   
+ <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/newdb?useSSL=false&amp;allowPublicKeyRetrieval=true"/>
+
+
+SQL TOOLS SETUP:
+creare il database usando come nome del db mysql
+
+Connection name*
+midoripoljsbeats
+Connection group
+Connect using*
+Server and Port
+Server Address*
+localhost
+Port*
+3306
+Database*
+mysql
+Username*
+root
+Password mode
+SQLTools Driver Credentials
+MySQL driver specific options
+Authentication Protocol
+default
+Try to switch protocols in case you have problems.
+SSL
+Disabled
+Over SSH
+Disabled
+Connection Timeout
+Show records default limit 50
+
+--- successivamente si potrà creare il db al punto successivo
+Per creare il db creare un file sql nella root, inserire nome del db da creare e lanciare la query 
+(tasto play in alto a sx).
+
+Una volta creato si può fare un mvn clean package, poi aggiungere il server, poi il deployment. Allo start server il db dovrebbe essere popolato.
