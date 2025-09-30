@@ -1,4 +1,7 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.midori_pol</groupId>
   <artifactId>MIDORI_POL</artifactId>
@@ -12,7 +15,7 @@
     <maven.compiler.target>21</maven.compiler.target>
   </properties>
   <dependencies>
-    <!--  J UNIT  -->
+    <!-- J UNIT -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
@@ -37,29 +40,30 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <!--  STRIPE   -->
+      <!-- STRIPE  -->
       <groupId>com.stripe</groupId>
       <artifactId>stripe-java</artifactId>
       <version>22.0.0</version>
     </dependency>
-    <!--  H2 DATABASE  -->
+    <!-- H2 DATABASE -->
     <dependency>
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
       <version>2.2.224</version>
       <scope>runtime</scope>
     </dependency>
-    <!--  HIBERNATE   -->
+    <!-- HIBERNATE  -->
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-entitymanager</artifactId>
       <version>5.6.15.Final</version>
     </dependency>
-    <!--   TOMCAT  -->
+<!--  TOMCAT -->
     <dependency>
       <groupId>org.apache.tomcat</groupId>
       <artifactId>tomcat-servlet-api</artifactId>
       <version>9.0.86</version>
+
       <scope>provided</scope>
     </dependency>
     <dependency>
@@ -88,13 +92,13 @@
       <artifactId>jboss-jaxrs-api_2.1_spec</artifactId>
       <version>2.0.2.Final</version>
     </dependency>
-    <!--  Dipendenza per JPA  -->
+    <!-- Dipendenza per JPA -->
     <dependency>
       <groupId>javax.persistence</groupId>
       <artifactId>javax.persistence-api</artifactId>
       <version>2.2</version>
     </dependency>
-    <!--  Dipendenza per Hibernate  -->
+    <!-- Dipendenza per Hibernate -->
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-core</artifactId>
@@ -116,16 +120,17 @@
       <version>2.23.1</version>
     </dependency>
   </dependencies>
+
   <build>
-    <finalName> MIDORIBEATS </finalName>
+    <finalName>ngmidori</finalName>
     <pluginManagement>
-      <!--  lock down plugins versions to avoid using Maven defaults (may be moved to parent pom)  -->
+      <!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.1.0</version>
         </plugin>
-        <!--  see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging  -->
+        <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.0.2</version>
@@ -159,13 +164,14 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
-        <!--  Aggiorna alla versione più recente  -->
+        <version>3.8.1</version> <!-- Aggiorna alla versione più recente -->
         <configuration>
           <source>8</source>
           <target>8</target>
         </configuration>
       </plugin>
+
+<!-- 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
@@ -190,6 +196,7 @@
           </execution>
         </executions>
       </plugin>
+-->
     </plugins>
   </build>
 </project>

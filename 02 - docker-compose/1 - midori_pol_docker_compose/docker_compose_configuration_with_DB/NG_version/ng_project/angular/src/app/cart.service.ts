@@ -16,8 +16,11 @@ export class CartService {
   addProductToCart (product: any, quantity: number): Observable<any> {
     const userId = this.getUserId();
     const data = { ...product, quantity, userId };
+    console.log('Chiamo addProductToCart con:', data); // <-- log qui
     this.updateCartVisibility(true); // Aggiunto per aggiornare la visibilità dell'icona del carrello
     return this.http.post(`${this.apiUrl}/add`,  data, { responseType: 'text' });
+     
+    
   }
 
   removeProductFromCart (productId: number, quantity: number): Observable<any> {

@@ -65,12 +65,11 @@
         });
     }
 
-    // generate UserId
-    function generateUniqueId() {
-        const timestamp = new Date().getTime(); // Ottieni il timestamp corrente
-        const random = Math.floor(Math.random() * 1000000); // Genera un numero casuale tra 0 e 999999
-        return (timestamp << 20) | random; // Combina il timestamp con il numero casuale
-    }
+  function generateUniqueId() {
+    const timestamp = Date.now(); // millisecondi
+    const random = Math.floor(Math.random() * 1000000); // numero casuale
+    return timestamp + random; // somma invece dello shift
+}
 
     // Get user ID
     function getUserId() {
@@ -151,7 +150,7 @@
             id: parseInt(productId),
             quantity: quantita,
             category: categoria,
-            userId: userId,
+             userId: parseInt(userId), // <-- forza numero
         };
         // Recupero il carrello per eventuali controlli
         getUserCart().then(cart => {
@@ -159,7 +158,7 @@
                 console.log("Exclusive già nel carrello");
                 return;
             } else {
-                fetch('midoripol/carrello/add', {
+                fetch('/midoripol/carrello/add', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -187,7 +186,7 @@
         const data = {
             id: parseInt(productId),
             quantity: quantita,
-            userId: userId,
+              userId: parseInt(userId), // <-- forza numero
         };
 
         console.log('Data sent to server:', data); // Stampa i dati inviati al server
